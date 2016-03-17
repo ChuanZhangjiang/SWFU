@@ -1,0 +1,32 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">18dp</dimen>
+    <dimen name="nav_header_height">120dp</dimen>
+    <dimen name="nav_header_headerImg_height">100dp</dimen>
+    <dimen name="nav_header_headerImg_width">100dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">12dp</dimen>
+    <dimen name="activity_vertical_margin">12dp</dimen>
+    <dimen name="fab_margin">12dp</dimen>
+    <dimen name="activity_horizontal_comp_margin">4dp</dimen>
+    <dimen name="activity_vertical_comp_margin">8dp</dimen>
+    <!--字体大小-->
+    <dimen name="txt_size_lsmall">8sp</dimen>
+    <dimen name="txt_size_small">12sp</dimen>
+    <dimen name="txt_size_xsmall">14sp</dimen>
+    <dimen name="txt_size_middle">16sp</dimen>
+    <dimen name="txt_size_xmiddle">17sp</dimen>
+    <dimen name="txt_size_large">18sp</dimen>
+    <dimen name="txt_size_xlarge">20sp</dimen>
+    <dimen name="txt_size_xxlarge">22sp</dimen>
+    <!--个人中心尺寸-->
+    <dimen name="myCenter_header_layout_height">200dp</dimen>
+    <dimen name="myCenter_header_layout_vertical_padding">8dp</dimen>
+    <dimen name="myCenter_imageView_header_height">@dimen/nav_header_headerImg_height</dimen>
+    <dimen name="myCenter_imageView_header_width">@dimen/nav_header_headerImg_width</dimen>
+    <dimen name="myCenter_et_dec_height">70dp</dimen>
+
+    <!-- 分割线尺寸 -->
+    <dimen name="divider">1dp</dimen>
+
+</resources>

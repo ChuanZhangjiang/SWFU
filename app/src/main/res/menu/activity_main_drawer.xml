@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@mipmap/ic_menu_home"
+            android:title="@string/draw_item_home"
+            android:checked="true"/>
+        <item
+            android:id="@+id/nav_active"
+            android:icon="@mipmap/ic_menu_active"
+            android:title="@string/draw_item_active" />
+        <item
+            android:id="@+id/nav_teachEvaluate"
+            android:icon="@mipmap/ic_menu_teach_envalue"
+            android:title="@string/draw_item_teachEvaluate" />
+        <item
+            android:id="@+id/nav_information"
+            android:icon="@mipmap/ic_menu_infomation"
+            android:title="@string/draw_item_information" />
+        <item
+            android:id="@+id/nav_informationQur"
+            android:icon="@mipmap/ic_menu_search"
+            android:title="@string/draw_item_informationQur" />
+        <item
+            android:id="@+id/nav_publicInfo"
+            android:icon="@mipmap/ic_menu_public_info"
+            android:title="@string/draw_item_publicInfo" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+
+</menu>

@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">西林教务</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- 公用字符串资源 -->
+    <string name="loading">请稍后...</string>
+    <string name="OK">确定</string>
+    <string name="cancel">取消</string>
+
+    <!-- activity fragment 标签-->
+    <string name="login_activity_lab">登录</string>
+    <string name="main_activity_lab">主页</string>
+
+    <!-- 登录界面的字符资源-->
+    <string name="login_userId_hint">学号</string>
+    <string name="login_userPass_hint">密码</string>
+    <string name="login_btn_text">登录</string>
+
+    <!-- 抽屉导航的选项标签字符串-->
+    <string name="draw_item_home">主页</string>
+    <string name="draw_item_active">活动</string>
+    <string name="draw_item_teachEvaluate">评教</string>
+    <string name="draw_item_information">信息维护</string>
+    <string name="draw_item_informationQur">信息查询</string>
+    <string name="draw_item_publicInfo">公用信息</string>
+    <string name="draw_item_setting">设置</string>
+
+    <!-- toolbar的menu的item字符串资源-->
+    <string name="toolbar_item_logout">退出登录</string>
+    <string name="toolbar_item_about">关于</string>
+    
+    <!-- 个人中心 -->
+    <string name="myCenter_title">个人中心</string>
+    <string name="myCenter_dec">简介:</string>
+    <string name="myCenter_resetPassword">重置密码</string>
+    <string name="myCenter_modify_information">编辑个人信息</string>
+    <string name="myCenter_studentId">学号:</string>
+    <string name="myCenter_name">姓名:</string>
+    <string name="myCenter_sex">性别:</string>
+    <string name="myCenter_age">年龄:</string>
+    <string name="myCenter_professional">专业:</string>
+    <string name="myCenter_level">年级:</string>
+    <string name="myCenter_old_pass">旧密码</string>
+    <string name="myCenter_new_pass">新密码</string>
+    <string name="myCenter_new_pass_reInput">再次输入新密码</string>
+    <string name="myCenter_updatePass_dialog_title">修改密码</string>
+    <string name="myCenter_toast_old_pass_isNull">请输入旧密码</string>
+    <string name="myCenter_toast_new_pass_isNull">请输入新密码</string>
+    <string name="myCenter_toast_new_pass_reInput_isNull">请再次输入新密码</string>
+    <string name="myCenter_toast_pass_check_noPass">两次输入密码不一致</string>
+
+</resources>

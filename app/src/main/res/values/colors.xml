@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#679528</color>
+    <color name="colorPrimaryDark">#58852A</color>
+    <color name="colorAccent">#FC9127</color>
+
+
+
+    <!-- btn color-->
+    <color name="color_btn_orange">#FC9127</color>
+    <color name="color_btn_green">#679528</color>
+
+    <!--分割线颜色-->
+    <color name="color_divider">#000000</color>
+
+    <!-- 个人中心中的颜色 -->
+    <color name="color_myCenter_dec_background">#D9D6CF</color>
+</resources>
