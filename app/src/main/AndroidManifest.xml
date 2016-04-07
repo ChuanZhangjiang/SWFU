@@ -53,6 +53,13 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan"
             android:launchMode="singleTop"/>
+
+        <!-- 选课activity -->
+        <activity android:name=".widget.activity.SelectCourseActivity"
+            android:label="@string/login_activity_lab"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan"
+            android:launchMode="singleTop"/>
     </application>
 
 </manifest>

@@ -5,8 +5,8 @@ import android.content.Context;
 import com.google.gson.JsonObject;
 
 import me.zjc.swfu.MyApplication;
-import me.zjc.swfu.bean.UpdatePasswordRequestBean;
-import me.zjc.swfu.bean.User;
+import me.zjc.swfu.netWork.requestBody.UpdatePasswordRequestBean;
+import me.zjc.swfu.tableBean.User;
 import me.zjc.swfu.model.IUserModel;
 import me.zjc.swfu.model.impl.UserModel;
 import me.zjc.swfu.util.LogUtil;

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cv_monday_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/activity_vertical_comp_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_comp_margin">
+                    <TextView
+                        android:id="@+id/tv_monday_title"
+                        style="@style/txt_size_middle_black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginStart="@dimen/activity_horizontal_margin"
+                        android:layout_marginBottom="@dimen/activity_vertical_comp_margin"
+                        android:layout_marginTop="@dimen/activity_vertical_comp_margin"
+                        android:text="@string/course_table_monday"/>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rlv_course_table_monday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cv_tuesday_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/activity_vertical_comp_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_comp_margin">
+                    <TextView
+                        android:id="@+id/tv_tuesday_title"
+                        style="@style/txt_size_middle_black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginStart="@dimen/activity_horizontal_margin"
+                        android:layout_marginBottom="@dimen/activity_vertical_comp_margin"
+                        android:layout_marginTop="@dimen/activity_vertical_comp_margin"
+                        android:text="@string/course_table_tuesday"/>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rlv_course_table_tuesday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cv_wednesday_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/activity_vertical_comp_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_comp_margin">
+                    <TextView
+                        android:id="@+id/tv_wednesday_title"
+                        style="@style/txt_size_middle_black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginStart="@dimen/activity_horizontal_margin"
+                        android:layout_marginBottom="@dimen/activity_vertical_comp_margin"
+                        android:layout_marginTop="@dimen/activity_vertical_comp_margin"
+                        android:text="@string/course_table_wednesday"/>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rlv_course_table_wednesday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cv_thursday_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/activity_vertical_comp_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_comp_margin">
+                    <TextView
+                        android:id="@+id/tv_thursday_title"
+                        style="@style/txt_size_middle_black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginStart="@dimen/activity_horizontal_margin"
+                        android:layout_marginBottom="@dimen/activity_vertical_comp_margin"
+                        android:layout_marginTop="@dimen/activity_vertical_comp_margin"
+                        android:text="@string/course_table_thursday"/>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rlv_course_table_thursday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cv_friday_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/activity_vertical_comp_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_comp_margin">
+                    <TextView
+                        android:id="@+id/tv_friday_title"
+                        style="@style/txt_size_middle_black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginStart="@dimen/activity_horizontal_margin"
+                        android:layout_marginBottom="@dimen/activity_vertical_comp_margin"
+                        android:layout_marginTop="@dimen/activity_vertical_comp_margin"
+                        android:text="@string/course_table_friday"/>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rlv_course_table_friday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cv_saturday_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/activity_vertical_comp_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_comp_margin">
+                    <TextView
+                        android:id="@+id/tv_saturday_title"
+                        style="@style/txt_size_middle_black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginStart="@dimen/activity_horizontal_margin"
+                        android:layout_marginBottom="@dimen/activity_vertical_comp_margin"
+                        android:layout_marginTop="@dimen/activity_vertical_comp_margin"
+                        android:text="@string/course_table_saturday"/>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rlv_course_table_saturday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cv_sunday_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/activity_vertical_comp_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_comp_margin">
+                    <TextView
+                        android:id="@+id/tv_sunday_title"
+                        style="@style/txt_size_middle_black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginStart="@dimen/activity_horizontal_margin"
+                        android:layout_marginBottom="@dimen/activity_vertical_comp_margin"
+                        android:layout_marginTop="@dimen/activity_vertical_comp_margin"
+                        android:text="@string/course_table_sunday"/>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rlv_course_table_sunday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+
+</android.support.design.widget.CoordinatorLayout>

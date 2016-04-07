@@ -33,7 +33,7 @@ public abstract class BaseRtrftOnSubscribe<T> implements Observable.OnSubscribe<
             Log.e(TAG, e.getMessage());
             return;
         }
-        if (response.isSuccess() && response.code() == getSuccessCode()) {
+        if (response.isSuccessful() && response.code() == getSuccessCode()) {
             subscriber.onNext(response.body());
         } else {
             try {

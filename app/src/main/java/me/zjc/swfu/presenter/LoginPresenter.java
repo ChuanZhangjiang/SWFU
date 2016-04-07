@@ -6,7 +6,7 @@ import android.widget.Toast;
 
 import java.util.concurrent.TimeUnit;
 
-import me.zjc.swfu.bean.User;
+import me.zjc.swfu.tableBean.User;
 import me.zjc.swfu.model.IUserModel;
 import me.zjc.swfu.model.impl.UserModel;
 import me.zjc.swfu.util.LogUtil;

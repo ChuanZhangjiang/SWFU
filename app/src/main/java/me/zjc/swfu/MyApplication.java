@@ -3,18 +3,14 @@ package me.zjc.swfu;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.util.Log;
 
 import java.util.LinkedList;
 import java.util.List;
 
-import me.zjc.swfu.bean.User;
-import me.zjc.swfu.common.Constants;
 import me.zjc.swfu.util.LogUtil;
 
 /**

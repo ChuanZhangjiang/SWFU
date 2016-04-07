@@ -3,6 +3,7 @@ package me.zjc.swfu.base;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
@@ -34,6 +35,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         setContentView(getLayoutId());
         setSupportActionBar(toolbar);
         MyApplication.getInstance().addActivity(this);
+        if (MyApplication.DEBUG) {
+            StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build());
+            StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectAll().penaltyLog().build());
+        }
     }
 
     @Override
@@ -41,8 +46,8 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.setContentView(layoutResID);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         initData();
-        initView();
         findView();
+        initView();
         setEvent();
     }
 
@@ -69,15 +74,14 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected abstract void initData();
 
     /**
-     * 用于将初始化之后的数据填充到View中
-     */
-    protected abstract void initView();
-
-
-    /**
      * 绑定控件
      */
     protected abstract void findView();
+
+    /**
+     * 用于将初始化之后的数据填充到View中
+     */
+    protected abstract void initView();
 
     /**
      * 用于设置事件的监听，比如，按钮点击、View的触摸等

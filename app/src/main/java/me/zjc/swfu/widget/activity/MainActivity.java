@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
@@ -21,14 +22,12 @@ import com.squareup.picasso.Picasso;
 import de.hdodenhof.circleimageview.CircleImageView;
 import me.zjc.swfu.R;
 import me.zjc.swfu.base.BaseActivity;
-import me.zjc.swfu.common.Constants;
 import me.zjc.swfu.presenter.MainPresenter;
 import me.zjc.swfu.util.LogUtil;
 import me.zjc.swfu.view.IMainView;
 import me.zjc.swfu.widget.Fragment.ActiveFragment;
 import me.zjc.swfu.widget.Fragment.HomeFragment;
 import me.zjc.swfu.widget.Fragment.InfoQueryFragment;
-import me.zjc.swfu.widget.Fragment.InformationFragment;
 import me.zjc.swfu.widget.Fragment.PublicInfoFragment;
 import me.zjc.swfu.widget.Fragment.TeachEvaluateFragment;
 
@@ -41,6 +40,7 @@ public class MainActivity extends BaseActivity
 
     private DrawerLayout drawer;
     private NavigationView navView;
+    private TabLayout tabLayout;
     private LinearLayout navHeader;
     private MainPresenter presenter;
     private ProgressBar mProgressBar;
@@ -49,7 +49,6 @@ public class MainActivity extends BaseActivity
     private HomeFragment homeFragment;
     private ActiveFragment activeFragment;
     private InfoQueryFragment infoQueryFragment;
-    private InformationFragment informationFragment;
     private PublicInfoFragment publicInfoFragment;
     private TeachEvaluateFragment teachEvaluateFragment;
 
@@ -70,6 +69,7 @@ public class MainActivity extends BaseActivity
         navView = (NavigationView) findViewById(R.id.nav_view);
         navHeader = (LinearLayout) navView.getHeaderView(0);
         mProgressBar = (ProgressBar) findViewById(R.id.nomal_progressBar);
+        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
     }
 
     @Override
@@ -88,10 +88,11 @@ public class MainActivity extends BaseActivity
         presenter.initNavView();//设置抽屉导航的头部
         setTitle(getResString(R.string.main_activity_lab));
         if (homeFragment == null) {
-            homeFragment = new HomeFragment();
+            homeFragment = new HomeFragment(tabLayout);
         }
         transaction.add(R.id.fragment_container, homeFragment, HomeFragment.TAG)
                 .commit();
+        tabLayout.setVisibility(View.VISIBLE);
     }
 
     /**
@@ -152,39 +153,38 @@ public class MainActivity extends BaseActivity
         transaction = getSupportFragmentManager().beginTransaction();
         if (id == R.id.nav_home) {
             if (homeFragment == null) {
-                homeFragment = new HomeFragment();
+                homeFragment = new HomeFragment(tabLayout);
             }
             transaction.replace(R.id.fragment_container, homeFragment, HomeFragment.TAG);
+            tabLayout.setVisibility(View.VISIBLE);
             setTitle(getResString(R.string.draw_item_home));
         } else if (id == R.id.nav_active) {
             if (activeFragment == null) {
                 activeFragment = new ActiveFragment();
             }
             transaction.replace(R.id.fragment_container, activeFragment, ActiveFragment.TAG);
+            tabLayout.setVisibility(View.GONE);
             setTitle(getResString(R.string.draw_item_active));
-        } else if (id == R.id.nav_information) {
-            if (informationFragment == null) {
-                informationFragment = new InformationFragment();
-            }
-            transaction.replace(R.id.fragment_container, informationFragment, InformationFragment.TAG);
-            setTitle(getResString(R.string.draw_item_information));
         } else if (id == R.id.nav_informationQur) {
             if (infoQueryFragment == null) {
                 infoQueryFragment = new InfoQueryFragment();
             }
             transaction.replace(R.id.fragment_container, infoQueryFragment, InfoQueryFragment.TAG);
+            tabLayout.setVisibility(View.GONE);
             setTitle(getResString(R.string.draw_item_informationQur));
         } else if (id == R.id.nav_publicInfo) {
             if (publicInfoFragment == null) {
                 publicInfoFragment = new PublicInfoFragment();
             }
             transaction.replace(R.id.fragment_container, publicInfoFragment, PublicInfoFragment.TAG);
+            tabLayout.setVisibility(View.GONE);
             setTitle(getResString(R.string.draw_item_publicInfo));
         } else if (id == R.id.nav_teachEvaluate) {
             if (teachEvaluateFragment == null) {
                 teachEvaluateFragment = new TeachEvaluateFragment();
             }
             transaction.replace(R.id.fragment_container, teachEvaluateFragment, TeachEvaluateFragment.TAG);
+            tabLayout.setVisibility(View.GONE);
             setTitle(getResString(R.string.draw_item_teachEvaluate));
         }
         transaction.commit();

@@ -58,5 +58,11 @@ public class Constants {
         public static final String HEADER_URL = "header_url";
         public static final String DEC = "dec";
         public static final String SESSIONTOKEN = "sessionToken";
+        public static final String IS_ADMIN = "isAdmin";
+    }
+
+    public static class PublicNotifyType {
+        public static final String NORMAL = "0";//普通公告
+        public static final String SELECT_COURSE = "1";//选课类型的公告
     }
 }

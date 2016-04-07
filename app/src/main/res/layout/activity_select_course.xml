@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar"/>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rlv_course"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/fab_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        app:fab_addButtonColorNormal="@color/fab_menu_btn_color"
+        app:fab_addButtonColorPressed="@color/fab_white_pressed"
+        app:fab_addButtonPlusIconColor="@color/fab_white"
+        app:fab_labelStyle="@style/menu_labels_style"
+        app:fab_size="normal">
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_commit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_size="mini"
+            app:fab_icon="@mipmap/ic_launcher"
+            app:fab_colorNormal="@color/fab_white"
+            app:fab_title="@string/select_course_commit"
+            app:fab_colorPressed="@color/fab_white_pressed"/>
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_size="mini"
+            app:fab_icon="@mipmap/ic_launcher"
+            app:fab_colorNormal="@color/fab_white"
+            app:fab_title="@string/select_course_clear"
+            app:fab_colorPressed="@color/fab_white_pressed"/>
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_look"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_size="mini"
+            app:fab_icon="@mipmap/ic_launcher"
+            app:fab_colorNormal="@color/fab_white"
+            app:fab_title="@string/select_course_look"
+            app:fab_colorPressed="@color/fab_white_pressed"/>
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+</android.support.design.widget.CoordinatorLayout>

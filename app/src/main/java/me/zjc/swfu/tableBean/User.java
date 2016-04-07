@@ -1,4 +1,4 @@
-package me.zjc.swfu.bean;
+package me.zjc.swfu.tableBean;
 
 
 /**
@@ -19,6 +19,16 @@ public class User {
     private Integer level;
     private String name; //姓名
     private String dec;
+    private Boolean isAdmin;
+
+    public Boolean getIsAdmin() {
+        return isAdmin;
+    }
+
+    public void setIsAdmin(Boolean isAdmin) {
+        this.isAdmin = isAdmin;
+    }
+
     private String header_url;
     private String sessionToken;
 

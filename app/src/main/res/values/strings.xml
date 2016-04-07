@@ -53,4 +53,25 @@
     <string name="myCenter_toast_new_pass_reInput_isNull">请再次输入新密码</string>
     <string name="myCenter_toast_pass_check_noPass">两次输入密码不一致</string>
 
+    <!--选课Activity-->
+    <string name="select_course_title">选课</string>
+    <string name="select_course_commit">提交选课结果</string>
+    <string name="select_course_clear">清除选课结果</string>
+    <string name="select_course_look">查看已选课程</string>
+    <string name="select_course_look_dialog_title">已选课程</string>
+    <string name="select_course_unChoose">退选</string>
+    <string name="select_course_course_name">课程名称：</string>
+    <string name="select_course_course_teacher">任课教师：</string>
+    <string name="select_course_no_select_course">你还没有选课</string>
+    <string name="select_course_no_selected_course">你还没有选过课</string>
+
+    <!-- 课表fragment-->
+    <string name="course_table_monday">星期一</string>
+    <string name="course_table_tuesday">星期二</string>
+    <string name="course_table_wednesday">星期三</string>
+    <string name="course_table_thursday">星期四</string>
+    <string name="course_table_friday">星期五</string>
+    <string name="course_table_saturday">星期六</string>
+    <string name="course_table_sunday">星期天</string>
+
 </resources>

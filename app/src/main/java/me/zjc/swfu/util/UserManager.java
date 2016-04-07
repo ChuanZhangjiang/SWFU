@@ -9,8 +9,8 @@ import com.google.gson.JsonObject;
 import java.util.List;
 
 import me.zjc.swfu.base.BaseRtrftOnSubscribe;
-import me.zjc.swfu.bean.UpdatePasswordRequestBean;
-import me.zjc.swfu.bean.User;
+import me.zjc.swfu.netWork.requestBody.UpdatePasswordRequestBean;
+import me.zjc.swfu.tableBean.User;
 import me.zjc.swfu.common.Constants;
 import retrofit2.Call;
 import retrofit2.Retrofit;
@@ -206,6 +206,10 @@ public class UserManager {
                         if (user.getSessionToken() != null) {
                             editor.putString(Constants.UserTableField.SESSIONTOKEN, user.getSessionToken());
                         }
+                        if (user.getIsAdmin() != null) {
+                            editor.putBoolean(Constants.UserTableField.IS_ADMIN, user.getIsAdmin());
+                        }
+
                         return editor;
                     }
                 })
@@ -236,6 +240,7 @@ public class UserManager {
                 user.setHeader_url(preferences.getString(Constants.UserTableField.HEADER_URL, ""));
                 user.setDec(preferences.getString(Constants.UserTableField.DEC, ""));
                 user.setSessionToken(preferences.getString(Constants.UserTableField.SESSIONTOKEN, ""));
+                user.setIsAdmin(preferences.getBoolean(Constants.UserTableField.IS_ADMIN, false));
                 if ("".equals(user.getObjectId())) {
                     subscriber.onError(new Throwable("null current user"));
                 } else {
@@ -255,6 +260,8 @@ public class UserManager {
 
         SharedPreferences.Editor editor = preferences.edit();
         editor.clear();
+
+        editor.commit();
     }
 
     private interface UserServer {

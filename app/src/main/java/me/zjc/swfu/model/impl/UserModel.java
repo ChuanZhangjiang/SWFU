@@ -6,9 +6,8 @@ import com.google.gson.JsonObject;
 
 import java.util.List;
 
-import me.zjc.swfu.MyApplication;
-import me.zjc.swfu.bean.UpdatePasswordRequestBean;
-import me.zjc.swfu.bean.User;
+import me.zjc.swfu.netWork.requestBody.UpdatePasswordRequestBean;
+import me.zjc.swfu.tableBean.User;
 import me.zjc.swfu.model.IUserModel;
 import me.zjc.swfu.util.UserManager;
 import rx.Observable;

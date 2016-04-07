@@ -3,16 +3,14 @@ package me.zjc.swfu.presenter;
 import android.content.Context;
 import android.content.Intent;
 
-import me.zjc.swfu.bean.User;
+import me.zjc.swfu.tableBean.User;
 import me.zjc.swfu.model.IUserModel;
 import me.zjc.swfu.model.impl.UserModel;
 import me.zjc.swfu.util.LogUtil;
 import me.zjc.swfu.view.IMainView;
 import me.zjc.swfu.widget.activity.LoginActivity;
-import rx.Scheduler;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
 import rx.schedulers.Schedulers;
 
 /**

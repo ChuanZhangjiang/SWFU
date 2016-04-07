@@ -7,10 +7,9 @@ import android.util.Log;
 
 import me.zjc.swfu.MyApplication;
 import me.zjc.swfu.R;
-import me.zjc.swfu.bean.User;
+import me.zjc.swfu.tableBean.User;
 import me.zjc.swfu.model.IUserModel;
 import me.zjc.swfu.model.impl.UserModel;
-import rx.Scheduler;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;

@@ -4,11 +4,16 @@
     <color name="colorPrimaryDark">#58852A</color>
     <color name="colorAccent">#FC9127</color>
 
-
+    <!--fab颜色-->
+    <color name="fab_white">#fafafa</color>
+    <color name="fab_white_pressed">#f1f1f1</color>
+    <color name="fab_black_semi_transparent">#B2000000</color>
+    <color name="fab_menu_btn_color">@color/colorAccent</color>
+    <color name="fab_half_black">#808080</color>
 
     <!-- btn color-->
-    <color name="color_btn_orange">#FC9127</color>
-    <color name="color_btn_green">#679528</color>
+    <color name="color_btn_orange">@color/colorAccent</color>
+    <color name="color_btn_green">@color/colorPrimary</color>
 
     <!--分割线颜色-->
     <color name="color_divider">#000000</color>

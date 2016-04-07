@@ -1,11 +1,9 @@
 package me.zjc.swfu.view;
 
 import android.app.Activity;
-import android.widget.Toast;
 
-import me.zjc.swfu.bean.UpdatePasswordRequestBean;
-import me.zjc.swfu.bean.User;
-import rx.Observable;
+import me.zjc.swfu.netWork.requestBody.UpdatePasswordRequestBean;
+import me.zjc.swfu.tableBean.User;
 
 /**
  * Created by ChuanZhangjiang on 2016/3/8.

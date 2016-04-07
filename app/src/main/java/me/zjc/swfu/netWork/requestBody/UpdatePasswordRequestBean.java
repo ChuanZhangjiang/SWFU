@@ -1,4 +1,4 @@
-package me.zjc.swfu.bean;
+package me.zjc.swfu.netWork.requestBody;
 
 /**
  * Created by ChuanZhangjiang on 2016/2/14.
