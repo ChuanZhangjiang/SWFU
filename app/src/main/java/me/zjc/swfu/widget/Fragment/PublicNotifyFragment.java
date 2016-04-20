@@ -19,6 +19,7 @@ import me.zjc.swfu.presenter.PNPresent;
 import me.zjc.swfu.tableBean.PublicNotify;
 import me.zjc.swfu.view.IPublicNotifyView;
 import me.zjc.swfu.widget.activity.MyCenterActivity;
+import me.zjc.swfu.widget.activity.PublicNotifyDetailActivity;
 import me.zjc.swfu.widget.activity.SelectCourseActivity;
 
 /**
@@ -90,9 +91,11 @@ public class PublicNotifyFragment extends BaseFragment implements IPublicNotifyV
     private void onNotifyClick(int position, PublicNotify publicNotify) {
         String notifyType = publicNotify.getType();
         Activity activity = getActivity();
-        if (Constants.PublicNotifyType.NORMAL.equals(notifyType)) { //常规公告
-
-        } else if (Constants.PublicNotifyType.SELECT_COURSE.equals(notifyType)) { //选课公告
+        if (PublicNotify.PublicNotifyType.NORMAL.equals(notifyType)) { //常规公告
+            Intent intent = new Intent(activity, PublicNotifyDetailActivity.class);
+            intent.putExtra("notifyId", publicNotify.getObjectId());
+            startActivity(intent);
+        } else if (PublicNotify.PublicNotifyType.SELECT_COURSE.equals(notifyType)) { //选课公告
             Intent intent = new Intent(activity, SelectCourseActivity.class);
             startActivity(intent);
         }

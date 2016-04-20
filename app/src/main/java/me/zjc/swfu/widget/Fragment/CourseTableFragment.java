@@ -3,13 +3,19 @@ package me.zjc.swfu.widget.Fragment;
 import android.content.Context;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.CardView;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.Map;
+
 import me.zjc.swfu.R;
+import me.zjc.swfu.adapter.CTAdapter;
+import me.zjc.swfu.adapter.listener.OnItemClickListener;
 import me.zjc.swfu.base.BaseFragment;
 import me.zjc.swfu.presenter.CTPresenter;
+import me.zjc.swfu.tableBean.Course;
 import me.zjc.swfu.view.ICourseTableView;
 
 /**
@@ -95,6 +101,52 @@ public class CourseTableFragment extends BaseFragment implements ICourseTableVie
     @Override
     public void showFragmentToast(String hint) {
         showToast(hint);
+    }
+
+    @Override
+    public void setCourseTable(Map<Integer, CTAdapter> courseTable) {
+        for (int i = 1 ; i < 8 ; i++ ) {
+            CTAdapter adapter = courseTable.get(i);
+
+            adapter.setOnItemClickListener(new OnItemClickListener<Course>() {
+                @Override
+                public void onItemClick(int position, Course itemObject) {
+
+                }
+            });
+
+            switch (i) {
+                case 1: // 设置星期一的RecycleView
+                    mViewHolder.mRlvCTMonday.setAdapter(adapter);
+                    mViewHolder.mRlvCTMonday.setLayoutManager(new LinearLayoutManager(getActivity()));
+//                    mViewHolder.mRlvCTMonday.setHasFixedSize(true);
+                    break;
+                case 2:
+                    mViewHolder.mRlvCTTuesday.setAdapter(adapter);
+                    mViewHolder.mRlvCTTuesday.setLayoutManager(new LinearLayoutManager(getActivity()));
+                    break;
+                case 3:
+                    mViewHolder.mRlvCTWednesday.setAdapter(adapter);
+                    mViewHolder.mRlvCTWednesday.setLayoutManager(new LinearLayoutManager(getActivity()));
+                    break;
+                case 4:
+                    mViewHolder.mRlvCTThursday.setAdapter(adapter);
+                    mViewHolder.mRlvCTThursday.setLayoutManager(new LinearLayoutManager(getActivity()));
+                    break;
+                case 5:
+                    mViewHolder.mRlvCTFriday.setAdapter(adapter);
+                    mViewHolder.mRlvCTFriday.setLayoutManager(new LinearLayoutManager(getActivity()));
+                    break;
+                case 6:
+                    mViewHolder.mRlvCTSaturday.setAdapter(adapter);
+                    mViewHolder.mRlvCTSaturday.setLayoutManager(new LinearLayoutManager(getActivity()));
+                    break;
+                case 7:
+                    mViewHolder.mRlvCTSunday.setAdapter(adapter);
+                    mViewHolder.mRlvCTSunday.setLayoutManager(new LinearLayoutManager(getActivity()));
+                    break;
+            }
+        }
     }
 
     private class ViewHolder{

@@ -29,4 +29,7 @@
     <!-- 分割线尺寸 -->
     <dimen name="divider">1dp</dimen>
 
+    <!-- 进度条高度 -->
+    <dimen name="progressBar_height">4dp</dimen>
+
 </resources>

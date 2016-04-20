@@ -29,6 +29,12 @@ public interface QueryServer {
     Call<JsonObject> getObjectByCondition(@Path("tableName") String tableName
             , @Query("where") String where);
 
+
+    /**
+     * 查询数据表中的所有对象
+     * @param tableName
+     * @return
+     */
     @Headers({
             "X-Bmob-Application-Id:" + Constants.APP_ID,
             "X-Bmob-REST-API-Key:" + Constants.REST_API_KEY,

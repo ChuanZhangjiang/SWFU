@@ -22,6 +22,8 @@ import com.squareup.picasso.Picasso;
 import de.hdodenhof.circleimageview.CircleImageView;
 import me.zjc.swfu.R;
 import me.zjc.swfu.base.BaseActivity;
+import me.zjc.swfu.netWork.client.PublicNotifyClient;
+import me.zjc.swfu.netWork.response.NotifyDetail;
 import me.zjc.swfu.presenter.MainPresenter;
 import me.zjc.swfu.util.LogUtil;
 import me.zjc.swfu.view.IMainView;
@@ -30,6 +32,8 @@ import me.zjc.swfu.widget.Fragment.HomeFragment;
 import me.zjc.swfu.widget.Fragment.InfoQueryFragment;
 import me.zjc.swfu.widget.Fragment.PublicInfoFragment;
 import me.zjc.swfu.widget.Fragment.TeachEvaluateFragment;
+import rx.Subscriber;
+import rx.schedulers.Schedulers;
 
 public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener, IMainView {
@@ -101,7 +105,7 @@ public class MainActivity extends BaseActivity
     private void initNavigationView() {
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
+        drawer.addDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -218,10 +222,14 @@ public class MainActivity extends BaseActivity
         CircleImageView ivHeader = (CircleImageView) navHeader.findViewById(R.id.iv_header);
         TextView tvName = (TextView) navHeader.findViewById(R.id.tv_userName);
         TextView tvDec = (TextView) navHeader.findViewById(R.id.tv_userDec);
-        Picasso.with(this)
-                .load(headerUrl)
-                .error(R.mipmap.header_default)
-                .into(ivHeader);
+        if (headerUrl == null || "".equals(headerUrl)) {
+            ivHeader.setImageResource(R.mipmap.header_default);
+        } else {
+            Picasso.with(this)
+                    .load(headerUrl)
+                    .error(R.mipmap.header_default)
+                    .into(ivHeader);
+        }
         tvName.setText(name);
         tvDec.setText(dec);
         ivHeader.setOnClickListener(new View.OnClickListener() {
@@ -245,5 +253,28 @@ public class MainActivity extends BaseActivity
     protected void onStop() {
         super.onStop();
         drawer.closeDrawer(navView);
+    }
+
+    private void test() {
+        PublicNotifyClient client = PublicNotifyClient.getInstance();
+
+        client.queryNotifyDetail("x394UUUY")
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Subscriber<NotifyDetail>() {
+                    @Override
+                    public void onCompleted() {
+                        LogUtil.e("test", "completed !");
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        LogUtil.e("test", "error: " + e.getMessage());
+                    }
+
+                    @Override
+                    public void onNext(NotifyDetail notifyDetail) {
+                        LogUtil.e("test", notifyDetail.toString());
+                    }
+                });
     }
 }

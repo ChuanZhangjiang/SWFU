@@ -10,10 +10,13 @@ import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import me.zjc.swfu.adapter.CTAdapter;
 import me.zjc.swfu.model.ICourseModel;
 import me.zjc.swfu.model.IUserModel;
 import me.zjc.swfu.model.impl.CourseModel;
@@ -79,6 +82,8 @@ public class CTPresenter {
                     courses = new ArrayList<Course>();
                 }
                 classifyCourse(courses);
+                Map<Integer, CTAdapter> courseTableAdapters = getCourseTableAdapters();
+                mCourseTableView.setCourseTable(courseTableAdapters);
                 swipeRefreshLayout.setRefreshing(false);
             }
         });
@@ -103,28 +108,29 @@ public class CTPresenter {
 
             for (CourseTime courseTime: courseTimeList) {
                 int weekDay = courseTime.getWhatDay();
-                course.setCourseTimeObject(courseTime);
+                Course courseClone = course.clone();
+                courseClone.setCourseTimeObject(courseTime);
                 switch (weekDay) {
                     case 1://星期一
-                        mondayCourse.add(course);
+                        mondayCourse.add(courseClone);
                         break;
                     case 2://星期二
-                        tuesdayCourse.add(course);
+                        tuesdayCourse.add(courseClone);
                         break;
                     case 3:
-                        wednesdayCourse.add(course);
+                        wednesdayCourse.add(courseClone);
                         break;
                     case 4:
-                        thursdayCourse.add(course);
+                        thursdayCourse.add(courseClone);
                         break;
                     case 5:
-                        fridayCourse.add(course);
+                        fridayCourse.add(courseClone);
                         break;
                     case 6:
-                        saturdayCourse.add(course);
+                        saturdayCourse.add(courseClone);
                         break;
                     case 7:
-                        sundayCourse.add(course);
+                        sundayCourse.add(courseClone);
                         break;
                 }
             }
@@ -142,6 +148,19 @@ public class CTPresenter {
         mWeekDayCourseMap.put(5, fridayCourse);
         mWeekDayCourseMap.put(6, saturdayCourse);
         mWeekDayCourseMap.put(7, sundayCourse);
+    }
+
+    private Map<Integer, CTAdapter> getCourseTableAdapters() {
+        Map<Integer, CTAdapter> courseTableAdapters = new HashMap<>();
+        for(int i = 1; i < 8 ; i++) {
+            List<Course> courses = mWeekDayCourseMap.get(i);
+            if (courses.size() > 0) {//排序
+                Collections.sort(courses, courses.get(0));
+            }
+            CTAdapter adapter = new CTAdapter(mContext, courses);
+            courseTableAdapters.put(i, adapter);
+        }
+        return courseTableAdapters;
     }
 
 

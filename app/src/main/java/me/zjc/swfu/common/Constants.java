@@ -8,6 +8,7 @@ public class Constants {
     //bmob中的APP_ID
     public static final String APP_ID = "db0e2b66462e5bafe9150538c9bf26d4";
     public static final String REST_API_KEY = "fcbf78a1e0bfecefe51059fec2d931a4";
+    public static final String SECRET_KEY = "3f53a0e67cad7c24";
 
     //性别
     public static final Boolean MALE = true;
@@ -27,6 +28,7 @@ public class Constants {
     //bmobUrl
     public static final String fileBaseUrl = "http://file.bmob.cn/";//
     public static final String BMOB_BASE_URL = "https://api.bmob.cn";//
+    public static final String BMOB_BASE_CLOUD_URL = "http://cloud.bmob.cn/";
 
     public static class UserUrlManager {
         public static final String REGISTER_URL = "/1/users";
@@ -61,8 +63,4 @@ public class Constants {
         public static final String IS_ADMIN = "isAdmin";
     }
 
-    public static class PublicNotifyType {
-        public static final String NORMAL = "0";//普通公告
-        public static final String SELECT_COURSE = "1";//选课类型的公告
-    }
 }

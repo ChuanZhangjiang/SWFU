@@ -16,16 +16,26 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+
+import java.io.File;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 import me.zjc.swfu.R;
 import me.zjc.swfu.base.BaseActivity;
+import me.zjc.swfu.netWork.client.DownloadClient;
 import me.zjc.swfu.netWork.requestBody.UpdatePasswordRequestBean;
+import me.zjc.swfu.netWork.response.BmobFile;
 import me.zjc.swfu.tableBean.User;
 import me.zjc.swfu.common.Constants;
 import me.zjc.swfu.presenter.MyCenterPresenter;
+import me.zjc.swfu.util.FileUtil;
 import me.zjc.swfu.util.LogUtil;
 import me.zjc.swfu.util.MD5Util;
 import me.zjc.swfu.view.IMyCenterView;
+import okhttp3.ResponseBody;
+import rx.functions.Action1;
+import rx.functions.Func1;
+import rx.schedulers.Schedulers;
 
 /**
  * Created by ChuanZhangjiang on 2016/2/25.

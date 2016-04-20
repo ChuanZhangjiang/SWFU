@@ -19,7 +19,7 @@ public class User {
     private Integer level;
     private String name; //姓名
     private String dec;
-    private Boolean isAdmin;
+    private Boolean isAdmin = false;
 
     public Boolean getIsAdmin() {
         return isAdmin;

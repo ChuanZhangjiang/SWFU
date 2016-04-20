@@ -1,5 +1,7 @@
 package me.zjc.swfu.tableBean;
 
+import java.util.List;
+
 /**
  * Created by ChuanZhangjiang on 2016/3/28.
  */
@@ -8,7 +10,8 @@ public class PublicNotify {
     private String title;
     private String content;
     private String to;
-    private String type;
+    private String type;//公告类型
+    private List<String> file; //附件id集合
 
     public String getObjectId() {
         return objectId;
@@ -48,5 +51,10 @@ public class PublicNotify {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public static class PublicNotifyType {
+        public static final String NORMAL = "0";//普通公告
+        public static final String SELECT_COURSE = "1";//选课类型的公告
     }
 }

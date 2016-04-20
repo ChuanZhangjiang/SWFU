@@ -6,6 +6,7 @@ import android.widget.Toast;
 
 import java.util.concurrent.TimeUnit;
 
+import me.zjc.swfu.admin.widget.activity.MainAdminActivity;
 import me.zjc.swfu.tableBean.User;
 import me.zjc.swfu.model.IUserModel;
 import me.zjc.swfu.model.impl.UserModel;
@@ -60,12 +61,17 @@ public class LoginPresenter {
                     @Override
                     public void onNext(User user) {
 
-                        mUserModel.saveCurrentUser(user, mContext);
-
-                        Intent intent = new Intent(mContext, MainActivity.class);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        mContext.startActivity(intent);
-                        Toast.makeText(mContext, "登录成功", Toast.LENGTH_SHORT).show();
+                        if (user.getIsAdmin()) {
+                            Intent intent = new Intent(mContext, MainAdminActivity.class);
+                            mContext.startActivity(intent);
+                            Toast.makeText(mContext, "登录成功", Toast.LENGTH_SHORT).show();
+                        } else {
+                            mUserModel.saveCurrentUser(user, mContext);
+                            Intent intent = new Intent(mContext, MainActivity.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            mContext.startActivity(intent);
+                            Toast.makeText(mContext, "登录成功", Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
 

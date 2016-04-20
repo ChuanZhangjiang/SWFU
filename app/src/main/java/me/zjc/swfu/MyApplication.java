@@ -8,10 +8,23 @@ import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
+import com.squareup.okhttp.ResponseBody;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
+import me.zjc.swfu.netWork.client.DownloadClient;
+import me.zjc.swfu.tableBean.User;
+import me.zjc.swfu.util.FileUtil;
 import me.zjc.swfu.util.LogUtil;
+import me.zjc.swfu.util.UserManager;
+import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Func1;
+import rx.schedulers.Schedulers;
 
 /**
  * Created by ChuanZhangjiang on 2016/1/9.
@@ -43,6 +56,7 @@ public class MyApplication extends Application {
         myApplication = this;
 
         initAppInfo();
+
     }
 
 

@@ -10,6 +10,9 @@
     <string name="loading">请稍后...</string>
     <string name="OK">确定</string>
     <string name="cancel">取消</string>
+    <string name="getDataFail">获取数据失败</string>
+    <string name="ge">个</string>
+    <string name="download">下载</string>
 
     <!-- activity fragment 标签-->
     <string name="login_activity_lab">登录</string>
@@ -32,7 +35,7 @@
     <!-- toolbar的menu的item字符串资源-->
     <string name="toolbar_item_logout">退出登录</string>
     <string name="toolbar_item_about">关于</string>
-    
+
     <!-- 个人中心 -->
     <string name="myCenter_title">个人中心</string>
     <string name="myCenter_dec">简介:</string>
@@ -73,5 +76,14 @@
     <string name="course_table_friday">星期五</string>
     <string name="course_table_saturday">星期六</string>
     <string name="course_table_sunday">星期天</string>
+
+    <!-- 查询界面 -->
+    <string name="info_query_queryScore">成绩查询</string>
+
+    <!-- 成绩查询activity -->
+    <string name="activity_query_score_lable">成绩</string>
+
+    <!-- 公告明细activity -->
+    <string name="activity_notify_detail_file">附件</string>
 
 </resources>

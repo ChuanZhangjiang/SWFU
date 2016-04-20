@@ -1,9 +1,11 @@
 package me.zjc.swfu.tableBean;
 
+import java.util.Comparator;
+
 /**
  * Created by ChuanZhangjiang on 2016/3/23.
  */
-public class Course {
+public class Course implements Comparator<Course> {
 
     public static final String TABLE_NAME = "Course";
 
@@ -60,5 +62,27 @@ public class Course {
 
     public void setCourseTime(String courseTime) {
         this.courseTime = courseTime;
+    }
+
+    public Course clone() {
+        Course course = new Course();
+        course.objectId = objectId;
+        course.teacher = teacher;
+        course.coursAdress = coursAdress;
+        course.courseName = courseName;
+        course.courseTime = courseTime;
+        course.courseTimeObject = courseTimeObject;
+        return course;
+    }
+
+    @Override
+    public int compare(Course lhs, Course rhs) {
+        Integer course01Section = lhs.courseTimeObject.getSection().get(0);
+        Integer course02Section = rhs.courseTimeObject.getSection().get(0);
+        int flag = course01Section.compareTo(course02Section);
+        if (flag == 0) {
+            return lhs.getCourseName().compareTo(rhs.courseName);
+        }
+        return flag;
     }
 }

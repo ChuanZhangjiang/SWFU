@@ -224,28 +224,28 @@ public class UserManager {
 
     public Observable<User> getCurrentUser(final Context context) {
         return Observable.create(new Observable.OnSubscribe<User>() {
-            @Override
-            public void call(Subscriber<? super User> subscriber) {
-                User user = new User();
-                SharedPreferences preferences = context.getSharedPreferences
-                        (Constants.sharedPreferencesNameManager.CURRENT_USER, Activity.MODE_PRIVATE);
-                user.setObjectId(preferences.getString(Constants.UserTableField.OBJECT_ID, ""));
-                user.setUsername(preferences.getString(Constants.UserTableField.USER_NAME, ""));
-                user.setName(preferences.getString(Constants.UserTableField.NAME, ""));
-                user.setProfessional(preferences.getString(Constants.UserTableField.PROFESSIONAL, ""));
-                user.setSex(preferences.getBoolean(Constants.UserTableField.SEX, true));
-                user.setAge(preferences.getInt(Constants.UserTableField.AGE, 0));
-                user.setClassName(preferences.getString(Constants.UserTableField.CLASSNAME, ""));
-                user.setLevel(preferences.getInt(Constants.UserTableField.LEVEL, 0));
-                user.setHeader_url(preferences.getString(Constants.UserTableField.HEADER_URL, ""));
-                user.setDec(preferences.getString(Constants.UserTableField.DEC, ""));
-                user.setSessionToken(preferences.getString(Constants.UserTableField.SESSIONTOKEN, ""));
-                user.setIsAdmin(preferences.getBoolean(Constants.UserTableField.IS_ADMIN, false));
-                if ("".equals(user.getObjectId())) {
-                    subscriber.onError(new Throwable("null current user"));
-                } else {
-                    subscriber.onNext(user);
-                }
+                    @Override
+                    public void call(Subscriber<? super User> subscriber) {
+                        User user = new User();
+                        SharedPreferences preferences = context.getSharedPreferences
+                                (Constants.sharedPreferencesNameManager.CURRENT_USER, Activity.MODE_PRIVATE);
+                        user.setObjectId(preferences.getString(Constants.UserTableField.OBJECT_ID, ""));
+                        user.setUsername(preferences.getString(Constants.UserTableField.USER_NAME, ""));
+                        user.setName(preferences.getString(Constants.UserTableField.NAME, ""));
+                        user.setProfessional(preferences.getString(Constants.UserTableField.PROFESSIONAL, ""));
+                        user.setSex(preferences.getBoolean(Constants.UserTableField.SEX, true));
+                        user.setAge(preferences.getInt(Constants.UserTableField.AGE, 0));
+                        user.setClassName(preferences.getString(Constants.UserTableField.CLASSNAME, ""));
+                        user.setLevel(preferences.getInt(Constants.UserTableField.LEVEL, 0));
+                        user.setHeader_url(preferences.getString(Constants.UserTableField.HEADER_URL, ""));
+                        user.setDec(preferences.getString(Constants.UserTableField.DEC, ""));
+                        user.setSessionToken(preferences.getString(Constants.UserTableField.SESSIONTOKEN, ""));
+                        user.setIsAdmin(preferences.getBoolean(Constants.UserTableField.IS_ADMIN, false));
+                        if ("".equals(user.getObjectId())) {
+                            subscriber.onError(new Throwable("null current user"));
+                        } else {
+                            subscriber.onNext(user);
+                        }
 
                 if (!subscriber.isUnsubscribed()) {
                     subscriber.onCompleted();
@@ -261,7 +261,7 @@ public class UserManager {
         SharedPreferences.Editor editor = preferences.edit();
         editor.clear();
 
-        editor.commit();
+        editor.apply();
     }
 
     private interface UserServer {

@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import me.zjc.swfu.base.BaseRtrftOnSubscribe;
+import me.zjc.swfu.common.Constants;
+import me.zjc.swfu.netWork.response.NotifyDetail;
+import me.zjc.swfu.netWork.server.PublicNotifyServer;
 import me.zjc.swfu.netWork.server.QueryServer;
 import me.zjc.swfu.netWork.server.ServerFactory;
 import me.zjc.swfu.tableBean.PublicNotify;
@@ -67,5 +70,22 @@ public class PublicNotifyClient {
     public void queryAllPublicNotify(Subscriber<List<PublicNotify>> subscriber) {
         allPublicNotify().observeOn(AndroidSchedulers.mainThread())
                 .subscribe(subscriber);
+    }
+
+    public Observable<NotifyDetail> queryNotifyDetail(final String notifyId) {
+        return Observable.create(new BaseRtrftOnSubscribe<NotifyDetail>() {
+            @Override
+            protected Call<NotifyDetail> getCall() {
+                ServerFactory factory = ServerFactory.getInstance();
+                PublicNotifyServer server = factory
+                        .createServer(Constants.BMOB_BASE_CLOUD_URL, PublicNotifyServer.class);
+                return server.queryNotifyDetail(notifyId);
+            }
+
+            @Override
+            protected int getSuccessCode() {
+                return 200;
+            }
+        });
     }
 }

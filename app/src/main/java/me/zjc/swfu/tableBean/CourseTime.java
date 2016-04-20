@@ -24,4 +24,12 @@ public class CourseTime {
     public void setWhatDay(Integer whatDay) {
         this.whatDay = whatDay;
     }
+
+    @Override
+    public String toString() {
+        return "CourseTime{" +
+                "whatDay=" + whatDay +
+                ", section=" + section +
+                '}';
+    }
 }

@@ -56,6 +56,7 @@ public abstract class BaseRtrftOnSubscribe<T> implements Observable.OnSubscribe<
     private String getErrorMessage(ResponseBody errorBody) throws IOException, JSONException {
         JSONObject errorBodyJson = new JSONObject(errorBody.string());
         return errorBodyJson.getString("error");
+//        return  errorBody.toString();
     }
 }
 
